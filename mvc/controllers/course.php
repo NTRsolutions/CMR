@@ -79,6 +79,26 @@ class Course extends Admin_Controller {
 		}
 	}
 
+	public function delete() {
+		$usertype = $this->session->userdata("usertype");
+		if($usertype == "Admin" || $usertype == "Cleader") {
+
+			$id = htmlentities(mysql_real_escape_string($this->uri->segment(3)));
+			if((int)$id) {
+				$this->course_m->delete_course($id);
+				$this->session->set_flashdata('success', $this->lang->line('menu_success'));
+				redirect(base_url("course/index"));
+			} else {
+				redirect(base_url("course/index"));
+			}
+		} else {
+			$this->data["subview"] = "error";
+			$this->load->view('_layout_main', $this->data);
+		}	
+	}
+
+	
+
 	public function edit() {
 		$usertype = $this->session->userdata("usertype");
 		if($usertype == "Admin" || $usertype == "Cleader") {
@@ -122,23 +142,7 @@ class Course extends Admin_Controller {
 		}
 	}
 
-	public function delete() {
-		$usertype = $this->session->userdata("usertype");
-		if($usertype == "Admin" || $usertype == "Cleader") {
-
-			$id = htmlentities(mysql_real_escape_string($this->uri->segment(3)));
-			if((int)$id) {
-				$this->course_m->delete_course($id);
-				$this->session->set_flashdata('success', $this->lang->line('menu_success'));
-				redirect(base_url("course/index"));
-			} else {
-				redirect(base_url("course/index"));
-			}
-		} else {
-			$this->data["subview"] = "error";
-			$this->load->view('_layout_main', $this->data);
-		}	
-	}
+	
 
 	public function unique_course() {
 		$id = htmlentities(mysql_real_escape_string($this->uri->segment(3)));
