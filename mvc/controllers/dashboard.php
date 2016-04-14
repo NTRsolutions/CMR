@@ -1,19 +1,7 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 class Dashboard extends Admin_Controller {
-/*
-| -----------------------------------------------------
-| PRODUCT NAME: 	INILABS SCHOOL MANAGEMENT SYSTEM
-| -----------------------------------------------------
-| AUTHOR:			INILABS TEAM
-| -----------------------------------------------------
-| EMAIL:			info@inilabs.net
-| -----------------------------------------------------
-| COPYRIGHT:		RESERVED BY INILABS IT
-| -----------------------------------------------------
-| WEBSITE:			http://inilabs.net
-| -----------------------------------------------------
-*/	
+	
 
 	function __construct() {
 		parent::__construct();
@@ -416,5 +404,3 @@ class Dashboard extends Admin_Controller {
 
 }
 
-/* End of file dashboard.php */
-/* Location: .//D/xampp/htdocs/school/mvc/controllers/dashboard.php */
