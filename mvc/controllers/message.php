@@ -1,19 +1,7 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 class Message extends Admin_Controller {
-/*
-| -----------------------------------------------------
-| PRODUCT NAME: 	INILABS SCHOOL MANAGEMENT SYSTEM
-| -----------------------------------------------------
-| AUTHOR:			INILABS TEAM
-| -----------------------------------------------------
-| EMAIL:			info@inilabs.net
-| -----------------------------------------------------
-| COPYRIGHT:		RESERVED BY INILABS IT
-| -----------------------------------------------------
-| WEBSITE:			http://inilabs.net
-| -----------------------------------------------------
-*/
+
 	function __construct() {
 		parent::__construct();
 		$this->load->model("message_m");
@@ -553,5 +541,3 @@ class Message extends Admin_Controller {
 
 }
 
-/* End of file message.php */
-/* Location: .//D/xampp/htdocs/school/mvc/controllers/message.php */
